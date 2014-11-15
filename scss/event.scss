@@ -1,0 +1,21 @@
+.event-list .item h2{
+  font-size:14px;
+  white-space:normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.event-list .item em{
+  color:#f0ad4e;
+  margin-left: 5px;
+  font-weight:bold;
+}
+
+/*event*/
+.event-funcs .tip{display: inline-block;width: 70px;font-size:12px;}
+.event-funcs .tip i{display: block;font-size:22px;color:#f0ad4e;}
+.event-img{width: 100%;}
+.event-con{background: #fff;margin:10px 0;border-top:2px solid #45C7DF;}
+.event-con .event-item{border-bottom:1px dotted #ccc;padding:10px;}
+.event-con .event-item.last{border-bottom:0;}
+.event-con .event-item h1{font-size:22px;}

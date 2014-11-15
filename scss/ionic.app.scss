@@ -1,0 +1,58 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/*public*/
+.bar-header .logo{
+  i{
+    height:100%;
+    background: url(../img/logo.png) left center no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 25px;
+    vertical-align:middle;
+  }
+  b{
+    display: inline-block;
+    padding-left: 5px;
+    vertical-align:middle;
+  }
+  color:#fff;
+  height: 100%;
+}
+.bar-header h1{color:#fff;}
+.cloak{display: none;}
+.pane{background: #f2f2f2;}
+
+.tabs .tab-item-active{color:#45C7DF;}
+.tab-item .icon{font-size:26px;height:29px;}
+
+.bar-header{background: #45C7DF;}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content{min-height:75px;}
+
+// .bar-back a{text-decoration: none;font-size:16px;color:#fff;}
+// .bar-back a span{padding-left: 10px;}
+
+@import "dash";
+@import "event";
+@import "account";

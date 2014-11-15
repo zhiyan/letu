@@ -1,0 +1,21 @@
+<ion-view title="Events" style="background:#fff;">
+  <ion-content class="has-header">
+    <ion-refresher
+        pulling-text="{{refreshText}}"
+        on-refresh="getEvents()">
+    </ion-refresher>
+	  <div class="list event-list">
+	    <a class="item item-thumbnail-left" href="#/event/{{event.event_id}}" ng-repeat="event in events">
+	      <img src="{{event.image_url}}">
+	      <h2>{{event.name}}</h2>
+	      <p>{{event.city_name}} {{event.start_time|dateFormat}} <em>{{event.price == '0.00' ? '免费' : '&yen;'+event.price}}</em></p>
+	    </a>
+      <div ng-if="loaded && !events.length" style="text-align:center;padding:40px 0;font-size:20px;line-height:1.5;">
+        没有找到您搜索的结果
+      </div>
+      <div ng-if="!loaded" style="text-align:center;padding:40px 0;font-size:20px;line-height:1.5;">
+        <span class="icon ion-loading-a"></span>
+      </div>
+	</div>
+  </ion-content>
+</ion-view>

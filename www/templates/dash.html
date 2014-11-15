@@ -1,0 +1,50 @@
+<ion-view>
+  <ion-content class="has-header padding">
+    <div class="list">
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          城市
+        </div>
+        <select ng-model="params.city">
+          <option selected value="">全部</option>
+          <option value="{{value}}" ng-repeat="(value,name) in cityList">{{name}}</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          时间
+        </div>
+        <select ng-model="params.filter_time">
+          <option selected value="">全部</option>
+          <option value="{{value}}" ng-repeat="(value,name) in filterTimeList">{{name}}</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          收费
+        </div>
+        <select ng-model="params.charge_type">
+          <option selected value="">全部</option>
+          <option value="{{value}}" ng-repeat="(value,name) in chargeTypeList">{{name}}</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          兴趣
+        </div>
+        <select ng-model="params.category">
+          <option selected value="">全部</option>
+          <option value="{{value}}" ng-repeat="(value,name) in category">{{name}}</option>
+        </select>
+      </label>
+
+    </div>
+    <button class="button button-full button-energized" ng-click="search()">
+      查找活动
+    </button>
+  </ion-content>
+</ion-view>

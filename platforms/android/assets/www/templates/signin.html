@@ -1,0 +1,17 @@
+<ion-view>
+  <ion-content class="has-header padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="用户名或邮箱" ng-model="search.user_name">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="密码" ng-model="search.password">
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="submit()">登陆</button>
+    <a class="button button-block button-light" href="#/register">我要注册账号</a>
+    <p class="assertive" ng-if="error" style="text-align:center;">
+      {{error}}
+    </p>
+  </ion-content>
+</ion-view>
