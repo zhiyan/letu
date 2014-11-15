@@ -43,8 +43,14 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   .button-clear{
     color:#fff;
   }
+  h1{
+    color:#fff;
+  }
 }
-.bar-header h1{color:#fff;}
+
+.main-view{
+  background: #fff;
+}
 .cloak{display: none;}
 .pane{background: #f2f2f2;}
 

@@ -7670,9 +7670,11 @@ a.button {
     vertical-align: middle; }
 .bar-header .button-clear {
   color: #fff; }
-
 .bar-header h1 {
   color: #fff; }
+
+.main-view {
+  background: #fff; }
 
 .cloak {
   display: none; }
