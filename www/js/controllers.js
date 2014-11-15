@@ -46,7 +46,7 @@ angular.module('letu.controllers', [])
 					var arr = res.rsm.url.match(/uid-(\d*).*sid-(.*)$/);
 					Util.setSid(arr[2]);
 					Util.setUid(arr[1]);
-					$rootScope.loginStatus = 0;
+					$state.go("tab.account");
 				}else{
 				}
 			});
@@ -96,7 +96,7 @@ angular.module('letu.controllers', [])
 					var arr = res.rsm.url.match(/uid-(\d*).*sid-(.*)$/);
 					Util.setSid(arr[2]);
 					Util.setUid(arr[1]);
-					$rootScope.loginStatus = 0;
+					$state.go("tab.account");
 				}else{
 					$scope.error = res.err;
 				}
