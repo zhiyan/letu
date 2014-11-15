@@ -109,6 +109,16 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
       }
     })
 
+    .state('tab.about', {
+      url: '/about',
+      views: {
+        'account': {
+          templateUrl: 'templates/about.html',
+          controller: 'AboutCtrl'
+        }
+      }
+    })
+
     .state('tab.register', {
       url: '/register',
       views: {

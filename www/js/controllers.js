@@ -10,7 +10,11 @@ angular.module('letu.controllers', [])
 .controller('AccountCtrl', function($http,$scope,$state,Util) {
 
 	if( !Util.getSid()  ){
-		$state.go("tab.signin");
+		// $state.go("tab.signin");
+	}
+
+	$scope.about = function(){
+		$state.go("tab.about");
 	}
 
 	$scope.logout = function(){
@@ -102,6 +106,10 @@ angular.module('letu.controllers', [])
 				}
 			});
 	}
+
+})
+
+.controller("AboutCtrl",function($scope,$rootScope,$http,Util,$state){
 
 })
 
