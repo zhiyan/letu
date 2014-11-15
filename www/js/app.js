@@ -95,22 +95,38 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
         'account': {
           templateUrl: 'templates/account.html',
           controller: 'AccountCtrl'
-        },
-        'signin': {
+        }
+      }
+    })
+
+    .state('tab.signin', {
+      url: '/signin',
+      views: {
+        'account': {
           templateUrl: 'templates/signin.html',
           controller: 'SigninCtrl'
-        },
-        'register': {
+        }
+      }
+    })
+
+    .state('tab.register', {
+      url: '/register',
+      views: {
+        'account': {
           templateUrl: 'templates/register.html',
           controller: 'RegisterCtrl'
         }
       }
     })
 
-    .state('detail', {
+    .state('tab.detail', {
       url: '/event/:eventId',
-      templateUrl: 'templates/detail.html',
-      controller: 'EventDetailCtrl'
+      views: {
+        'events': {
+          templateUrl: 'templates/detail.html',
+          controller: 'EventDetailCtrl'
+        }
+      }
     })
 
     .state('checkout', {
@@ -148,7 +164,7 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
       templateUrl: 'templates/list_people.html',
       controller: 'ListPeopleCtrl'
     })
-  // if none of the above states are matched, use this as the fallback
+
   $urlRouterProvider.otherwise('/tab/dash');
 
 });

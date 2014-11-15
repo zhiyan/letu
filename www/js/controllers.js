@@ -1,18 +1,21 @@
 angular.module('letu.controllers', [])
 
 .controller('HeaderCtrl', function($http,$scope,$rootScope,$state,Util) {
-
+	$rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+				$scope.showLogo = toState.name === "tab.dash";
+				$scope.backhome = toState.name == "tab.signin" || toState.name == "tab.register";
+		});
 })
 
-.controller('AccountCtrl', function($http,$scope,$rootScope,$state,Util) {
-	$rootScope.pageTitle = "我的";
-	$rootScope.back = true;
+.controller('AccountCtrl', function($http,$scope,$state,Util) {
 
-	$rootScope.loginStatus = !!Util.getSid() ? 0 : 1;
+	if( !Util.getSid()  ){
+		$state.go("tab.signin");
+	}
 
 	$scope.logout = function(){
 		Util.removeUser();
-		$rootScope.loginStatus = 1;
+		$state.go("tab.signin");
 	}
 
 })
@@ -24,6 +27,10 @@ angular.module('letu.controllers', [])
 		"password" : "",
 		"app" : true
 	};
+
+	$scope.register = function(){
+		$state.go("tab.register");
+	}
 
 	$scope.submit = function(){
 		$scope.error = "";
@@ -62,7 +69,7 @@ angular.module('letu.controllers', [])
 })
 
 
-.controller("RegisterCtrl",function($scope,$rootScope,$http,Util){
+.controller("RegisterCtrl",function($scope,$rootScope,$http,Util,$state){
 
 	$scope.search = {
 		"user_name": "",
@@ -70,6 +77,10 @@ angular.module('letu.controllers', [])
 		"agreement_chk" : true,
 		"app": true
 	};
+
+	$scope.signin = function(){
+		$state.go("tab.signin");
+	}
 
 	$scope.submit = function(){
 		$scope.error = "";
@@ -96,14 +107,10 @@ angular.module('letu.controllers', [])
 
 .controller('ApplyEventsCtrl', function($scope,$http,$rootScope,$stateParams,Util) {
 
-	$rootScope.pageTitle = "参加的活动";
-
 	var uid = Util.getUid(),
 			sid = Util.getSid();
 
 	$scope.refreshText = "下拉刷新...";
-
-	$rootScope.back = true;
 
 	$scope.loaded = false;
 
@@ -134,10 +141,6 @@ angular.module('letu.controllers', [])
 })
 
 .controller('PublishEventsCtrl', function($scope,$http,$rootScope,$stateParams,Util) {
-
-	$rootScope.pageTitle = "发布的活动";
-
-	$rootScope.back = true;
 
 	var uid = Util.getUid(),
 			sid = Util.getSid();
@@ -205,8 +208,6 @@ angular.module('letu.controllers', [])
 
 .controller('EventsCtrl', function($scope,$http,$rootScope,$stateParams) {
 
-	$rootScope.pageTitle = "活动";
-
 	$scope.refreshText = "下拉刷新...";
 
 	$scope.loaded = false;
@@ -241,9 +242,6 @@ angular.module('letu.controllers', [])
 })
 
 .controller('EventDetailCtrl', function($scope,$rootScope,$state,$http,$sce) {
-	$rootScope.pageTitle = "活动详情";
-
-	$rootScope.back = true;
 
 	$scope.toHtml = function( html ) {
 		return $sce.trustAsHtml(html);
@@ -267,14 +265,10 @@ angular.module('letu.controllers', [])
 })
 
 .controller("CheckoutCtrl",function($scope,$rootScope){
-	$rootScope.pageTitle = "结算";
 
 })
 
 .controller("ApplyCtrl",function($scope,$rootScope,$state,$http,Util){
-	$rootScope.pageTitle = "结算";
-
-	$rootScope.back = true;
 
 	$scope.search = {
 		"id" : 114091855648 || $state.params.eventId,
@@ -305,13 +299,9 @@ angular.module('letu.controllers', [])
 })
 
 .controller("SuccessCtrl",function($scope,$rootScope){
-	$rootScope.pageTitle = "操作成功";
 })
 
 .controller("ListPeopleCtrl",function($scope,$rootScope,$state,$stateParams,Util,$http){
-	$rootScope.pageTitle = "人员名单";
-
-	$rootScope.back = true;
 
 	$scope.load = true;
 

@@ -18,8 +18,11 @@
   <body ng-app="letu" animation="slide-left-right-ios7" ng-cloak>
 
     <ion-nav-bar animation="nav-title-slide-ios7" ng-controller="HeaderCtrl">
-      <!-- <span class="logo" ng-if="false"><i></i><b>乐途帮</b></span> -->
-      <ion-nav-back-button class="button-clear">
+      <span class="logo" ng-if="showLogo"><i></i><b>乐途帮</b></span>
+      <a class="button-clear button" ng-if="backhome" href="#/tab/dash">
+        <i class="ion-arrow-left-c"></i> 首页
+      </a>
+      <ion-nav-back-button class="button-clear" ng-if="!backhome">
         <i class="ion-arrow-left-c"></i> 返回
       </ion-nav-back-button>
     </ion-nav-bar>

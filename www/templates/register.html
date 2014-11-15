@@ -1,4 +1,4 @@
-<ion-view ng-if="loginStatus == 2">
+<ion-view title="注册">
   <ion-content class="has-header padding">
     <div class="list list-inset">
       <label class="item item-input">
@@ -9,7 +9,8 @@
       </label>
     </div>
     <button class="button button-block button-calm" ng-click="submit()">注册</button>
-    <a class="button button-block button-light"  href="javascript:void(0)" ng-click="$root.loginStatus = 1">已有账号</a>
+    <button class="button button-block button-light"  ng-click="signin()">已有账号</button>
+
     <p class="assertive" ng-if="error" style="text-align:center;">
       {{error}}
     </p>
