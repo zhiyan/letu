@@ -1,7 +1,7 @@
 angular.module('letu.controllers', [])
 
 .controller('HeaderCtrl', function($http,$scope,$rootScope,$state,Util) {
-	$rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+	$rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
 				$scope.showLogo = toState.name === "tab.dash" || toState.name === "tab.account" || toState.name === "tab.events";
 				// $scope.backhome = toState.name == "tab.signin" || toState.name == "tab.register";
 		});

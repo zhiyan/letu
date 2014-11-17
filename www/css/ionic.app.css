@@ -7799,6 +7799,7 @@ a.button {
       border-radius: 25px; }
     .account-header .account-logo span {
       position: absolute;
+      top: 0;
       left: 100%;
       line-height: 50px;
       font-size: 14px;
