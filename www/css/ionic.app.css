@@ -7772,3 +7772,16 @@ a.button {
   border-top: 1px solid #f5f5f5;
   border-bottom: 1px solid #ddd;
   margin: 30px 0; }
+
+.about-logo {
+  background: #45C7DF url(../img/logo.png) no-repeat center center;
+  background-size: 80%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 20px auto;
+  position: relative; }
+
+.about .icon {
+  font-size: 14px;
+  color: #999; }
