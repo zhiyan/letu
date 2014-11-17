@@ -11,6 +11,12 @@ angular.module('letu.controllers', [])
 
 	$scope.isLogin = !!Util.getSid();
 
+	if( $scope.isLogin ){
+		$http.get(URL+"people/ajax/user_info/uid-"+Util.getUid()).success(function(res){
+			$scope.info = res;
+		})
+	}
+
 	$scope.signin = function(){
 		$state.go("tab.signin");
 	}
@@ -255,7 +261,8 @@ angular.module('letu.controllers', [])
 
 	$scope.getEvents = function(){
 		$http.get(API+"event/list/",{params:params}).success(function(res){
-				$scope.events = res.list.concat( $scope.events );
+				var list = res.list.concat( $scope.events );
+				$scope.events = list.slice(0,30);
 				$scope.loaded = true;
 				params.cur_page = +res.pagination.cur_page + 1;
 				if(  Math.ceil(res.pagination.total_rows/res.pagination.per_page ) < params.cur_page ){

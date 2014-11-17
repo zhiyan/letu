@@ -7795,6 +7795,8 @@ a.button {
     line-height: 50px;
     border-radius: 25px;
     box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.7); }
+    .account-header .account-logo img {
+      border-radius: 25px; }
     .account-header .account-logo span {
       position: absolute;
       left: 100%;

@@ -5,6 +5,10 @@
       <a href="javascript:void(0)" class="account-logo ion-android-contact icon" ng-click="signin()" ng-if="!isLogin">
         <span>未登录</span>
       </a>
+      <a href="javascript:void(0)" class="account-logo" ng-if="isLogin">
+        <img src="{{info.avatar_file}}" alt="" />
+        <span>{{info.user_name}}</span>
+      </a>
     </div>
     <!-- 个人资料 -->
     <!-- <div class="list">
