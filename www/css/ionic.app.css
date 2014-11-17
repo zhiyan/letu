@@ -7760,6 +7760,17 @@ a.button {
 .event-con .event-item h1 {
   font-size: 22px; }
 
+.event-des {
+  font-size: 12px; }
+  .event-des span, .event-des p {
+    color: #333 !important;
+    background: none !important;
+    font-size: 12px !important; }
+  .event-des a {
+    display: none; }
+  .event-des img {
+    max-width: 100%; }
+
 /*account*/
 .button-qq {
   background: #fff url("../img/qq.png") no-repeat 18% center;

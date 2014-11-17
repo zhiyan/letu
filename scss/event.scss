@@ -19,3 +19,13 @@
 .event-con .event-item{border-bottom:1px dotted #ccc;padding:10px;}
 .event-con .event-item.last{border-bottom:0;}
 .event-con .event-item h1{font-size:22px;}
+.event-des{
+  font-size:12px;
+  span,p{
+    color:#333 !important;
+    background:none !important;
+    font-size:12px !important;
+  }
+  a{display: none;}
+  img{max-width:100%;}
+}
