@@ -157,16 +157,24 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
       controller: 'ApplyCtrl'
     })
 
-    .state('publish_events', {
+    .state('tab.publish_events', {
       url: '/publish_events',
-      templateUrl: 'templates/events_publish.html',
-      controller: 'PublishEventsCtrl'
+      views: {
+        'account': {
+          templateUrl: 'templates/events_publish.html',
+          controller: 'PublishEventsCtrl'
+        }
+      }
     })
 
-    .state('apply_events', {
+    .state('tab.apply_events', {
       url: '/apply_events',
-      templateUrl: 'templates/events.html',
-      controller: 'ApplyEventsCtrl'
+      views: {
+        'account': {
+          templateUrl: 'templates/events.html',
+          controller: 'ApplyEventsCtrl'
+        }
+      }
     })
 
     .state('list_people', {

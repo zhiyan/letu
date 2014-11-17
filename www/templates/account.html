@@ -1,5 +1,11 @@
 <ion-view title="">
-  <ion-content class="has-header padding">
+
+  <ion-content class="has-header">
+    <div class="account-header">
+      <a href="javascript:void(0)" class="account-logo ion-android-contact icon" ng-click="signin()" ng-if="!isLogin">
+        <span>未登录</span>
+      </a>
+    </div>
     <!-- 个人资料 -->
     <!-- <div class="list">
 
@@ -13,13 +19,13 @@
     <!-- 活动相关 -->
     <div class="list">
 
-      <a class="item item-icon-left item-icon-right" href="#/apply_events">
+      <a class="item item-icon-left item-icon-right" href="javascript:void(0)" ng-click="apply()">
         <i class="icon ion-wineglass"></i>
         参加的活动
         <i class="icon ion-ios7-arrow-right"></i>
       </a>
 
-      <a class="item item-icon-left item-icon-right" href="#/publish_events">
+      <a class="item item-icon-left item-icon-right" href="javascript:void(0)" ng-click="publish()">
         <i class="icon ion-happy"></i>
         发布的活动
         <i class="icon ion-ios7-arrow-right"></i>
@@ -35,7 +41,7 @@
         <i class="icon ion-ios7-arrow-right"></i>
       </a>
 
-      <a class="item item-icon-left" href="javascript:void(0)"  ng-click="logout()">
+      <a class="item item-icon-left" href="javascript:void(0)"  ng-click="logout()" ng-if="isLogin">
         <i class="icon ion-log-out"></i>退出登录
       </a>
 

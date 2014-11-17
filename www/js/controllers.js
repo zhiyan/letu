@@ -3,14 +3,32 @@ angular.module('letu.controllers', [])
 .controller('HeaderCtrl', function($http,$scope,$rootScope,$state,Util) {
 	$rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
 				$scope.showLogo = toState.name === "tab.dash" || toState.name === "tab.account" || toState.name === "tab.events";
-				$scope.backhome = toState.name == "tab.signin" || toState.name == "tab.register";
+				// $scope.backhome = toState.name == "tab.signin" || toState.name == "tab.register";
 		});
 })
 
 .controller('AccountCtrl', function($http,$scope,$state,Util) {
 
-	if( !Util.getSid()  ){
-		// $state.go("tab.signin");
+	$scope.isLogin = !!Util.getSid();
+
+	$scope.signin = function(){
+		$state.go("tab.signin");
+	}
+
+	$scope.apply = function(){
+		if( !$scope.isLogin ){
+			$state.go("tab.signin");
+		}else{
+			$state.go("tab.apply_events");
+		}
+	}
+
+	$scope.publish = function(){
+		if( !$scope.isLogin ){
+			$state.go("tab.signin");
+		}else{
+			$state.go("tab.publish_events");
+		}
 	}
 
 	$scope.about = function(){
@@ -120,6 +138,8 @@ angular.module('letu.controllers', [])
 
 	$scope.refreshText = "下拉刷新...";
 
+	$scope.title="参加的活动";
+
 	$scope.loaded = false;
 
 	$scope.events = [];
@@ -154,6 +174,8 @@ angular.module('letu.controllers', [])
 			sid = Util.getSid();
 
 	$scope.refreshText = "下拉刷新...";
+
+	$scope.title="发布的活动";
 
 	$scope.loaded = false;
 
