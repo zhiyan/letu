@@ -7656,13 +7656,15 @@ a.button {
 /*public*/
 .bar-header .logo {
   color: #fff;
-  height: 100%; }
+  min-height: 25px;
+  line-height: 35px; }
   .bar-header .logo i {
     height: 100%;
     background: url(../img/logo.png) left center no-repeat;
     background-size: contain;
     display: inline-block;
     width: 25px;
+    height: 25px;
     vertical-align: middle; }
   .bar-header .logo b {
     display: inline-block;

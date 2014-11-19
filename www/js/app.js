@@ -26,7 +26,6 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
         }
       });
     }
-    // alert(JSON.stringify($rootScope.$viewHistory))
     // Is there a page to go back to?
     if ($rootScope.$viewHistory.backView && $rootScope.$viewHistory.currentView.stateId !== "tab.dash") {
       // Go back in history
@@ -38,6 +37,7 @@ angular.module('letu', ['ionic', 'letu.controllers', 'letu.services','ngCordova'
 
     return false;
   }, 101);
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

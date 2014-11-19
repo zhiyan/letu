@@ -1,9 +1,15 @@
 angular.module('letu.controllers', [])
 
-.controller('HeaderCtrl', function($http,$scope,$rootScope,$state,Util) {
+.controller('HeaderCtrl', function($http,$scope,$rootScope,$state,Util,$timeout) {
 	$rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
-				$scope.showLogo = toState.name === "tab.dash" || toState.name === "tab.account" || toState.name === "tab.events";
-				// $scope.backhome = toState.name == "tab.signin" || toState.name == "tab.register";
+				$scope.showLogo = false;
+				if(fromState.name === "tab.dash" || fromState.name === "tab.account" || fromState.name === "tab.events"){
+					$scope.showLogo = toState.name === "tab.dash" || toState.name === "tab.account" || toState.name === "tab.events";
+				}else{
+					$timeout(function(){
+						$scope.showLogo = toState.name === "tab.dash" || toState.name === "tab.account" || toState.name === "tab.events";
+					},500);
+				}
 		});
 })
 
